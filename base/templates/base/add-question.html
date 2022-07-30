@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/add-question.css' %}">
+<link rel="stylesheet" href="{% static 'styles/form.css' %}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&display=swap" rel="stylesheet">
+
+<div class="add-question-form">
+<form action="" method="POST" enctype="multipart/form-data">
+
+    {% csrf_token %}
+    {{form.as_p}}
+ 
+    <div class="submit">
+    <input type="submit" name="submit" id="submit-btn">
+
+
+</form>
+
+
+</div>
+</div>
+
+
+
+{% endblock content %}
+

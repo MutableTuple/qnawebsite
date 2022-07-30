@@ -1,0 +1,277 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    padding: 10px;
+    width: 100%;
+    /* background-color:rgb(26,26,28); */
+
+    height: auto;
+    /* border: 2px dashed greenyellow; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+  
+}
+.sub-container{
+    /* color: white; */
+    width: 90%;
+    height: 100%;
+    /* border: 2px dashed deeppink; */
+    overflow-x: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    column-gap: 10px;
+
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+}
+.left-box{
+    /* border: 2px dashed rgb(0, 255, 106); */
+    width: 55%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.right-box{
+    font-family: "Raleway",sans-serif;
+    padding: 5px;
+    
+    /* border: 2px dashed rgb(98, 0, 255); */
+    width: 40%;
+   
+
+    
+}
+.answer-box{
+    font-family: "Raleway",sans-serif;
+
+    margin-top:50px ;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 10px;
+    background: rgba(196, 196, 196,0.3);
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px; */
+}
+#answer{
+    font-family: "outfit", sans-serif;
+    font-weight: 200;
+}
+#qn-title{
+    font-family: "outfit", sans-serif;
+    font-weight: 200;
+}
+
+#qn-image{
+    padding: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    
+}
+
+#answer-image{
+    padding: 5px;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    overflow-x: scroll;
+
+}
+.question-title{
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    padding: 10px;
+}
+.Tags{
+    margin-top: 10px;
+    /* border: 1px solid black; */
+    min-height: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    
+
+}
+#tag-box{
+    background-color: rgb(225, 0, 255);
+    margin: 5px;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 50px;
+    color: aliceblue;
+    font-family: "Poppins";
+    font-weight: bold;
+}
+.vote-box{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    font-family: "Raleway",sans-serif;
+
+    margin-top:10px ;
+    width: 100%;
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+    padding: 10px;
+    /* background: rgba(196, 196, 196,0.3); */
+    justify-content: flex-end;
+    
+}
+.followers-box{
+    
+    
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid black; */
+    min-height: 50px;
+    width: 95%;
+    padding: 10px;
+    /* box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px; */
+    /* flex-wrap: wrap; */
+    background: rgb(0, 21, 34);
+
+    color:  white;
+    border-radius: 10px;
+
+
+    
+
+}
+#follow-btn{
+    background-color: rgb(255, 0, 0);
+    width: 100px;
+    /* border: 1px solid black; */
+    margin-left: auto;
+
+    margin-right: 2px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-radius:20px ; */
+    height: 50px;
+
+
+    
+}
+#btn a{
+font-family: "Poppins";    
+color: aliceblue;
+  
+}
+
+#vbox{
+    width: 13px;
+    height: 13px;
+    /* filter: grayscale(100%); */
+   
+    
+}
+    
+#follow-btn:hover{
+    background-color: rgba(255, 0, 0, 0.801);
+    transition: 0.2s;
+}
+
+#img-box{
+   width:100%;
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    /* border: 1px solid crimson; */
+}
+#user-img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    
+   
+
+}
+
+
+#vote-positive{
+    padding: 10px;
+    color: white;
+    background-color: rgba(12, 150, 7, 0.747);
+
+}
+#f-username{
+    padding-left: 10px;
+    margin-bottom: auto;
+    /* border: 1px solid black; */
+    font-family: "Poppins";
+    width: 40%;
+    height: 100%;
+
+}
+#f-count{
+    font-size: 12px;
+}
+
+
+#vote-negative{
+    padding: 10px;
+    color: white;
+    background-color: rgba(243, 0, 0, 0.747);
+
+}
+
+#vote-positive:hover{
+    cursor: pointer;
+    background-color:greenyellow ;
+    color: black;
+    transition: 0.3s;
+}
+
+#vote-negative:hover{
+
+    cursor: pointer;
+    background-color:crimson ;
+    
+    transition: 0.3s;
+}
+
+
+#vote-positive:active{
+    background: rgb(0, 255, 34);
+    transition: 0.1s;
+}
+
+#views-text{
+    font-family: "Nunito sans";
+    font-size: 12px;
+    color: rgb(210, 30, 39);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 0, 157);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+

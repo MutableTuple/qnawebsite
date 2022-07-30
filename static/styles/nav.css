@@ -1,0 +1,83 @@
+.navbar{
+    display: flex;
+    /* column-gap: 20px; */
+    /* padding: 15px; */
+    justify-content: right;
+    font-family: "Poppins";
+    background-color: rgba(0, 0, 0, 0.842);
+    backdrop-filter: blur(20px);
+    
+
+
+}
+
+
+#logo{
+    width: 54px;
+    height: 54px;
+}
+.nav-icon-1{
+    background-color: rgba(0, 0, 0, 0.733);
+    padding: 15px;
+    color: aliceblue;
+    border-bottom: 1px solid greenyellow;
+    color: greenyellow;
+    
+}
+.nav-icon-2{
+    background-color: rgba(64, 224, 208, 0.452);
+    padding: 15px;
+    color: red;
+
+    background-color: rgba(0, 0, 0, 0.733);
+    border-bottom: 1px solid red;
+
+}
+.nav-icon-3{
+    background-color:rgba(255, 99, 71, 0.514);
+    padding: 15px;
+    color: red;
+    
+    background-color: rgba(0, 0, 0, 0.733);
+    border-bottom: 1px solid red;
+}
+.nav-icon-4{
+    background-color:rgba(255, 0, 149, 0.438);
+    padding: 15px;
+    color: red;
+    background-color: rgba(0, 0, 0, 0.733);
+    border-bottom: 1px solid red;
+}
+
+.nav-icon-4 a{
+    color: white;
+}
+
+.nav-icon-1:hover{
+    background-color: violet;
+    transition: 0.2s;
+    background: greenyellow;
+    color: red;
+}
+.nav-icon-2:hover{
+    background-color: turquoise;
+    transition: 0.2s;
+    background: red;
+    color: greenyellow;
+    
+}
+.nav-icon-3:hover{
+    background-color: tomato;
+    transition: 0.2s;
+    background: red;
+    color: greenyellow;
+    
+}
+
+.nav-icon-4:hover{
+    background-color: deeppink;
+    transition: 0.2s;
+    background: red;
+    color: greenyellow;
+}
+

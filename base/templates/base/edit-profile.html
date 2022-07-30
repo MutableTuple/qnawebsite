@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'styles/edit-profile.css' %}">
+
+
+<div class="container">
+    <div class='form-box'>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+
+<div class="submit-btn">
+    
+    <input type="submit" name="" id="submit-btn" value="submit">
+
+</div>
+
+</form>
+
+</div>
+</div>
+
+
+{% endblock content %}

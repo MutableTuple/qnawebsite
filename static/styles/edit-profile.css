@@ -1,0 +1,139 @@
+body{
+    margin: 0px;
+    padding: 0px;
+  background-color:rgba(26, 26, 28, 0.897);
+    
+  
+
+
+}
+
+.container{
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins";
+
+  
+  
+}
+
+input{
+    
+    width: 500px;
+    height: 40px;
+    color: rgb(43, 255, 0);
+
+  font-family: "Poppins";
+
+
+}
+
+.form-box{
+    width:500px;
+    padding: 50px;
+    display: flex;
+    /* align-content: center;
+    align-items: center; */
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.603);
+    margin-bottom: 20px;
+  border-radius: 2px;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+
+
+    
+}
+
+label{
+    display: none;
+}
+
+input[type="checkbox"]{
+    display: none;
+
+
+}
+
+input{
+    
+    border-radius: 2px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    outline: none;
+    border: none;
+    
+    background-color:rgba(0, 0, 0, 0.575) ;
+}
+
+textarea{
+    border-radius: 2px;
+    
+    outline: none;
+    border: none;
+    background-color:rgba(0, 0, 0, 0.575) ;
+    width: 500px;
+
+    color: rgb(255, 36, 36);
+    font-size: 15px;
+  font-family: "Poppins";
+
+
+
+    
+
+}
+
+#id_profile_pic{
+    background-color:transparent ;
+    border: none;
+}
+#id_name{
+}
+#id_email{
+   
+
+}
+.submit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid white; */
+    width: 500px;
+   
+
+
+}
+
+#submit-btn{
+    width: 200px;
+    background: transparent;
+    border: 1px solid rgb(21, 255, 0);
+}
+#submit-btn:hover{
+    background:rgb(94, 255, 0);
+    color: rgb(0, 0, 0);
+    transition: 0.2s;
+}
+
+input:focus{
+
+    border-bottom: 1px solid greenyellow ;
+
+    transition: 0.2s;
+
+}
+textarea:focus{
+    
+    border-bottom: 1px solid greenyellow ;
+
+    transition: 0.2s;
+
+}
+a{
+    color: greenyellow;
+    text-decoration: none;
+}

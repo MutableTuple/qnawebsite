@@ -1,0 +1,97 @@
+body{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+    /* background: rgba(0, 0, 0, 0.158); */
+
+    /* background:red ; */
+}
+h1{
+    font-family: "Montserrat";
+}
+h2{
+    font-family: "Montserrat";
+    color: red;
+}
+form{
+    /* background: purple; */
+    padding: 50px;
+    font-family: 'Montserrat', sans-serif;
+    background: whitesmoke;
+    border-radius: 5px;
+    background-color:rgba(0, 0, 0, 0.788);
+}
+
+input{
+    width: 500px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    font-size: 15px;
+    font-family: "Montserrat";
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background: rgba(0, 0, 0, 0.233);
+    color: rgb(255, 0, 0);
+    
+
+
+}
+
+
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(250, 0, 0);
+    transition: 0.2s ;
+    color: rgb(255, 0, 0);
+
+    
+}
+input[type="password"]{
+    color: green;
+
+}
+/* border-bottom: 2px solid rgba(51, 255, 0, 0.904) */
+input[type="password"]:focus{
+    /* color: green; */
+border-bottom: 2px solid rgba(51, 255, 0, 0.904)
+
+
+}
+
+
+label{
+    display: none;
+}
+.helptext{
+    display: none;
+}
+ul{
+    display: none;
+}
+input[type="submit"]{
+    height: 40px;
+    background:rgb(27, 145, 43);
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+#goto-login{
+    font-family: "Montserrat";
+
+}
+span a{
+    text-decoration: none;
+}
+input[type="submit"]:hover{
+    background: rgba(51, 255, 0, 0.904);
+    transition: 0.3s;
+}
+#username{
+    background: red;
+
+}

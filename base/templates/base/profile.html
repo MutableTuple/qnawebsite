@@ -1,0 +1,73 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300&display=swap" rel="stylesheet">
+
+<div class="container">
+
+  
+
+    <div class="left-con">
+        <div class="user-image">
+            <img src="{{user.profile_pic.url}}" alt="" id="user-img">
+        </div>
+        <div class="user-details">
+            <h2 id="username">{{ user.name }} {% if user.verified %} <span id="vbox"> <span><img src="{% static 'images/ribbons/check.png' %}" alt="" id="verified"></span> </span> {% endif %} </h2> 
+
+        </div>
+
+  
+
+        <div class="user-desc">
+            <h5>{{ user.description|linebreaksbr }}</h5>
+            
+        </div>
+        <h2 id="t-badges">Badges</h2>
+        <div id="achievements">
+           
+            
+            <!-- <h6>{{ user.date_joined|timesince }}</h6> -->
+            {% if user.average %}  <img id="verified-image-rookie" src="{% static 'images/ribbons/rookie.png' %}" alt=""> {% endif %}  
+            {% if user.average %}  <img id="verified-image-average" src="{% static 'images/ribbons/average.png' %}" alt=""> {% endif %}
+                </div>
+
+    </div>
+
+
+    <div class="right-con">
+        {% if request.user.profile.id == user.id %}
+        <h1 id="t-ques">Your Submissions</h1>
+        {% else %}
+        <h1 id="t-ques">{{user.name|title}}'s Submissions</h1>
+        {% endif %}
+
+        <div class="questions-pane">
+
+        {% if project %}
+            {% for pro in project %}
+            <div class="question">
+                {% if pro.title %}
+                    <h3><a href="{% url 'question' pro.id %}">{{ pro.title }}</a>  </h3> 
+                    
+                {% endif %}
+            </div>
+            {% endfor %}
+        
+        {% else %}
+        <p style="text-align: center;">No Sumbissions by user :/</p>
+
+        {% endif %}
+
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock content %}

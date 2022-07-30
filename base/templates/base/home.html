@@ -1,0 +1,85 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+    <title>QuestionBank.com</title>
+</head>
+<script src="{% static 'js/script.js' %}">
+
+</script>
+<body>
+ 
+ 
+
+
+    <!-- experimental stuff -->
+   <!-- <button id="btn">
+    Button
+   </button> -->
+
+
+
+    <!-- experimental stuff -->
+
+
+
+    <div class="title-con">
+        <h1 id="title-text" > The Legit Bank of <span class="b-text">Questions</span> & <span class="b-text">Answers</span>!</h1>
+        <p id="sub-text">A community Made by the Students & For the Students.</p>
+        
+    </div>
+    
+        
+
+   
+     
+    <div class='container'>
+       
+        
+
+        <div class="top-header">
+        </div>
+  
+
+        <div class="list-box">
+        {% for task in tasks %}
+            <div class="box" id="box">
+       
+                
+            <div id="user-details"> <a href="{% url 'profile' task.owner.id %}">  <h5 id="username"> @{{ task.owner.name }}  {% if profile.verified %} <span id="vbox"> <span> <img src="{% static 'images/ribbons/tick.png' %}" alt="" id="verified"></span> </span> {% endif %}   </h5> </a><span id="time">posted {{ task.created|timesince }} ago</span></div>
+            <br>
+            <h4 id="title">Q) {{ task.title|linebreaksbr }}</h4>
+
+        
+                <!-- <p>{{ task.description|linebreaksbr }}</p> -->
+                <div class="v-container">
+                <div class="v-ans">
+                   <a href="{% url 'question' task.id %}"><p>view answer</p></a> 
+
+                </div>
+            </div>
+            </div>
+        {% endfor %}
+        </div>
+
+
+    </div>
+    
+</body>
+</html>
+
+<script src="{% static 'js/script.js' %}">
+    
+</script>
+
+{% endblock content %}

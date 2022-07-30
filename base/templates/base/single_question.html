@@ -1,0 +1,246 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'styles/single_question.css' %}">
+
+
+<div class="container">
+    <div id='pop-up-thank'>
+        <p>
+            <p id="text">Thank you for your Feedback!<span id="close-btn-1">X</span></p>
+        </p> 
+    
+    </div>
+    <div id='pop-up-thank-negative'>
+        <p>
+            <p id="text">Thank you for your Feedback!<span id="close-btn">X</span></p>
+        </p> 
+    
+    </div>
+    <div class="sub-container"> 
+        <div class="left-box">
+            <img id="qn-image" src="{{ tasks.Question_pic.url }}" alt="">
+        </div>
+
+        <div class="right-box">
+            <h2>Question:  </h2> <span id="views-text">{{tasks.views}} views</span>
+            <br>
+            <div class="question-title">
+                <h4 id="qn-title">{{ tasks.title }}</h4>
+                
+            </div>
+            <!-- <div class="vote-box"> -->
+                 <form action="" method="POST">
+                        {% csrf_token %}
+                        <div id="show-votes">
+                            {{tasks.votes_positive}} Votes
+                            
+                        </div>
+                        {% if request.user in tasks.votes_positive %}
+                        <p>Thans</p>
+                        {% else %}
+                        <input type="submit" name="" value="Vote" id="vote-positive">
+                        {% endif %}
+                       
+                        
+
+                </form>
+            <!-- </div> -->
+            <div class="Tags">
+               
+            {% for tag in tags %}
+            <span id="tag-box">
+                {{tag.tag_name}}
+            </span>
+            {% endfor %}
+        
+            </div>
+            <div class="followers-box">
+                <div class="inner-box">
+                        <div class="followers">
+                            <div id="img-box">
+                                <img id="user-img" src="{{user.profile_pic.url}}" alt="">
+                                <div id="f-username">
+                                    {{tasks.owner.name}} {% if user.verified %} <span id="vbox"> <span><img id="vbox" src="{% static 'images/ribbons/check.png' %}" alt="" id="verified"></span> </span> {% endif %}
+                                    <br>
+                                    <span id="f-count">{{user.followers }} followers</span>
+                                    
+                                </div>
+                                <div id="follow-btn">
+                                    <form action="" method="POST">
+                                        {% csrf_token %}
+                                  <div id="btn"> <a href="">Follow</a> </div> 
+                                  
+                                </form>
+                                </div>
+    
+                            </div>
+
+                           
+                           
+                          
+                        </div>
+
+                      
+                </div>
+            </div>
+        </div>
+        <div class="answer-box">
+            <h2>Answer:</h2>
+            <br>
+            <div class="answer-text">
+                <h4 id="answer"> 
+            {% if tasks.description %}
+                     {{tasks.description|linebreaksbr}}
+            {% elif tasks.Answer_pic.url %}
+                <img src="{{tasks.Answer_pic.url}}" alt="" id="answer-image">
+
+            {% else %}
+             <p>No answer</p>
+            {% endif %}
+        </h4>
+        
+            </div>
+           
+        </div>
+       
+</div>
+
+
+
+</div>
+
+
+
+
+<style>
+    #pop-up-thank{
+        /* position:relative; */
+        /* padding: 10px; */
+        background-color:rgba(21, 255, 0, 0.37);
+        /* width: 500px; */
+        /* margin-bottom: 10px; */
+        font-family: monospace;
+        visibility: hidden;
+        
+    }
+    #pop-up-thank-negative{
+        /* position:relative; */
+        /* padding: 10px; */
+        background-color:rgba(255, 0, 0, 0.37);
+        /* width: 500px; */
+        /* margin-bottom: 10px; */
+        font-family: monospace;
+        visibility: hidden;
+        
+    }
+    #close-btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: right;
+        
+        
+        
+
+    }
+    #close-btn-1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        float: right;
+        
+        
+        
+
+    }
+    #close-btn:hover{
+        cursor: pointer;
+    }
+    #close-btn-1:hover{
+        cursor: pointer;
+    }
+    #vote-positive{
+        text-align: center;
+        border:none;
+        margin-top: 20px;
+    }
+    #show-votes{
+        margin-top:10px;
+        background-color: rgba(0, 216, 0, 0.514);
+        padding: 20px;
+        text-align: center;
+        font-family: "Poppins";
+        /* visibility: hidden; */
+    }
+
+</style>
+
+<script>
+    document.getElementById("vote-positive").onclick=function()
+    {
+        document.getElementById("pop-up-thank").style.transition="0.2s";   
+        document.getElementById("pop-up-thank").style.padding="10px";
+        document.getElementById("pop-up-thank").style.width="500px";
+        document.getElementById("pop-up-thank").style.marginBottom="10px";
+        document.getElementById("pop-up-thank").style.visibility="visible";
+        // document.getElementById("vote-positive").innerHTML=<p>{{votes_positive}} </p>;
+        
+
+
+    }
+    document.getElementById("vote-positive").onclick=function(){
+
+        document.getElementById("vote-positive").style.visibility="hidden";
+    }
+
+    document.getElementById("vote-negative").onclick=function()
+    {
+        document.getElementById("pop-up-thank-negative").style.transition="0.2s";   
+        document.getElementById("pop-up-thank-negative").style.padding="10px";
+        document.getElementById("pop-up-thank-negative").style.width="500px";
+        document.getElementById("pop-up-thank-negative").style.marginBottom="10px";
+        document.getElementById("pop-up-thank-negative").style.visibility="visible";
+        
+
+
+    }
+
+
+    document.getElementById("close-btn-1").onclick=function()
+    {
+      
+        document.getElementById("pop-up-thank").style.padding="0px";
+        document.getElementById("pop-up-thank").style.width="0px";
+        document.getElementById("pop-up-thank").style.marginBottom="0px";
+        document.getElementById("pop-up-thank").style.transition="0.2s";
+        document.getElementById("pop-up-thank").innerHTML="";
+
+
+        document.getElementById("pop-up-thank").style.visibility="hidden";
+    }
+    
+
+    document.getElementById("close-btn").onclick=function()
+    {
+     
+        document.getElementById("pop-up-thank-negative").style.padding="0px";
+        document.getElementById("pop-up-thank-negative").style.width="0px";
+        document.getElementById("pop-up-thank-negative").style.marginBottom="0px";
+        document.getElementById("pop-up-thank-negative").style.transition="0.2s";
+        document.getElementById("pop-up-thank-negative").innerHTML="";
+
+
+        document.getElementById("pop-up-thank-negative").style.visibility="hidden";
+        
+    }
+</script>
+{% endblock content %}
+
